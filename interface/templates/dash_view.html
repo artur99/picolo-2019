@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code | Picolo</title>
+    <link rel="stylesheet" href="/assets/style.css">
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dash_container">
+        <div class="dash_topline">
+            <i class="material-icons ico">account_circle</i>
+            <h3>Hello, <b>{{user_name}}</b>!</h3>
+            <a href="/logout" class="little-sub">Sign out?</a>
+        </div>
+        <div class="dash_inner">
+            <div class="dash_inner_header">
+                <a href="/dashboard" class="btn btn-ico btn-ico-only left">
+                    <i class="material-icons">chevron_left</i>
+                </a>
+                <h4>Stats for {{website_name}}</h4>
+
+
+            </div>
+
+            <div class="tac">
+                <div class="info_box c2">
+                    Total Saved Traffic:
+                    <span>{{total_saved}}</span>
+                </div>
+                <div class="info_box c3">
+                    Total Requests:
+                    <span>{{stats.total_requests}}</span>
+                </div>
+                <div class="info_box">
+                    Total Image Servings:
+                    <span>{{stats.total_served_images}}</span>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    <script src="/assets/main.js" charset="utf-8"></script>
+</body>
+</html>

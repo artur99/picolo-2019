@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code | Picolo</title>
+    <link rel="stylesheet" href="/assets/style.css">
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dash_container">
+        <div class="dash_topline">
+            <i class="material-icons ico">account_circle</i>
+            <h3>Hello, <b>{{user_name}}</b>!</h3>
+            <a href="/logout" class="little-sub">Sign out?</a>
+        </div>
+        <div class="dash_inner">
+            <div class="dash_inner_header">
+                <a href="/dashboard" class="btn btn-ico btn-ico-only left">
+                    <i class="material-icons">chevron_left</i>
+                </a>
+                <h4>Code Generator for {{website_name}}</h4>
+            </div>
+
+
+            <b>Main script:</b>
+            <pre>"serviceWorker"in navigator&&window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").then(function(e){console.log("Started serviceworker: ",e.scope)},function(e){console.log("ServiceWorker registration failed: ",e)})});</pre>
+            <br>
+            <b>sw.js file (at /sw.js)</b>
+            <pre>
+var patterns = '{{website_patterns_str}}';
+var window_sizes={w:1500,h:800}
+self.addEventListener('fetch',function(event){if(event.request.destination!='image'){console.log("Destination not matching:",event.request.destination)
+return}
+var url=event.request.url;var url_in=url.split("://").slice(1)[0]
+let do_it=!1;for(let i of patterns.split(',')){let regex=i.replace(/\./g,'\\.').replace(/\-/g,'\\-').replace(/\//g,'\\/').replace(/\?/g,'\\?').replace(/\*/g,'.*')
+if(url_in.match(regex)||url.match(regex)){do_it=!0
+break}}
+if(!do_it){console.log("NOT REDIRECTING: no match.")
+return}
+console.log("REDIRECTING image:",url)
+event.respondWith(fetch("{{api_url}}/image?sizes="+window_sizes.w+","+window_sizes.h+"&api_key={{api_key}}&url="+encodeURIComponent(url),{mode:'cors'}))})
+self.addEventListener("message",function(e){if(e.data.channel=='window_size'){window_sizes.w=e.data.data.w
+window_sizes.h=e.data.data.h}},!1)
+            </pre>
+        </div>
+    </div>
+
+
+    <script src="/assets/main.js" charset="utf-8"></script>
+</body>
+</html>

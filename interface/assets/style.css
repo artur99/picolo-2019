@@ -1,0 +1,400 @@
+body, html {
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.col {
+    padding: 10px;
+    flex: 1;
+    width: auto;
+    display: block;
+}
+.a-btn {
+    color: #333;
+}
+
+.general-form .input-label {
+    display: block;
+    text-align: left;
+    margin-bottom: 25px;
+}
+.general-form .input-label b {
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: -3px;
+}
+
+.general-form .input-label input {
+    background: transparent;
+    border: none;
+    height: 35px;
+    outline: none;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    margin-bottom: 1px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 30px;
+    width: 100%;
+    display: block;
+}
+.general-form.on-white .input-label input {
+    border-bottom-color: #555;
+    color: #333;
+}
+.general-form .input-label input:focus {
+    border-bottom: 2px solid #fff;
+}
+.general-form.on-white .input-label input:focus {
+    border-bottom: 2px solid #333;
+}
+.general-form .input-label input[type=submit],
+.general-form .input-label button {
+    background: #fff;
+    color: #2666c8;
+    height: auto;
+    padding: 10px;
+    font-weight: normal;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid #fff;
+    transition: .3s color, .2s background;
+}
+.general-form .input-label input[type=submit]:hover,
+.general-form .input-label button:hover {
+    background: #2666c8;
+    color: #fff;
+}
+.general-form .input-label input[type=submit]:focus,
+.general-form .input-label buton:focus {
+    font-weight: bold;
+}
+.general-form.disabled .input-label input[type=submit] {
+    background: #cbcbcb;
+    border-color: #cbcbcb;
+    color: #888;
+}
+.general-form.on-white .input-label input[type=submit] {
+    background: #2666c8;
+    color: #fff;
+    border: 2px solid #2666c8;
+    padding: 6px;
+}
+.general-form.on-white .input-label input[type=submit]:hover {
+    background: #fff;
+    color: #2666c8;
+}
+
+.general-form.on-white .input-label textarea {
+    background: transparent;
+    border: none;
+    min-height: 100px;
+    outline: none;
+    border-bottom: 1px solid #555;
+    margin: 0;
+    margin-bottom: 1px;
+    color: #333;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 8px 0;
+    width: 100%;
+    display: block;
+}
+.general-form.on-white .input-label textarea:focus {
+    border-bottom: 2px solid #333;
+}
+
+.general-form .input-select-group {
+    font-size: 15px;
+    vertical-align: middle;
+}
+.general-form .input-select-group label {
+    cursor: pointer;
+    display: block;
+    margin-bottom: 5px;
+}
+.general-form .input-select-group label .subinfo {
+    margin: 4px;
+    margin-left: 22px;
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+.general-form .input-select-group label input {
+    vertical-align: top;
+}
+.general-form .input-select-group .input-label {
+    margin-bottom: 15px;
+}
+
+.general-form .form-sublink {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    text-align: center;
+}
+
+.btn {
+    background: #2666c8;
+    color: #fff;
+    height: auto;
+    padding: 12px 20px;
+    font-weight: normal;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid #fff;
+    transition: .3s color, .2s background;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 16px;
+    vertical-align: middle;
+}
+.btn.btn-black {
+    background: #333;
+}
+.btn:hover {
+    background: #fff;
+    color: #2666c8;
+    border-color: #2666c8;
+}
+.btn.btn-black:hover {
+    color: #333;
+    border-color: #333;
+}
+.btn.btn-ico .material-icons {
+    vertical-align: bottom;
+    display: inline-block;
+    font-size: 22px;
+    line-height: 16px;
+    margin-left: 8px;
+    margin-right: -2px;
+}
+.btn.btn-ico-only {
+    padding: 12px;
+}
+.btn.btn-ico-only .material-icons {
+    margin: 0;
+    font-size: 24px;
+}
+.btn.right {
+    float: right;
+    margin-left: 10px;
+}
+.btn.left {
+    float: left;
+    margin-right: 10px;
+}
+
+.nothingness-paragraph {
+    display: block;
+    color: #999;
+    font-style: italic;
+    text-align: center;
+    margin: 90px 0;
+}
+.beautiful-table {
+    display: table;
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+    margin: 10px 0;
+    margin-top: 20px;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.beautiful-table tr {
+    border-bottom: 1px solid #aaa;
+}
+.beautiful-table tr > th,
+.beautiful-table tr > td {
+    padding: 11px 14px;
+}
+.beautiful-table tr > th {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+.full_container {
+    background: #2666c8;
+    display: flex;
+    min-height: 100vh;
+}
+
+.full_container > .left {
+    flex: 1;
+    padding: 20px;
+    background: #fff;
+    color: #333;
+    display: block;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.full_container > .right {
+    flex: 1;
+    padding: 20px;
+    flex-basis: 500px;
+    flex-grow: 0;
+    background: #2666c8;
+    color: #fff;
+    display: block;
+}
+
+.full_container > .left .ico {
+    font-size: 200px;
+    margin-bottom: 20px;
+}
+.full_container > .left h3 {
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    margin-bottom: 80px;
+}
+
+.full_container > .right .login_signup_form {
+    margin: auto;
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    width: 90%;
+}
+.full_container > .right .login_signup_form h2 {
+    font-size: 30px;
+    font-family: Montserrat, sans-serif;
+    margin: 60px 0;
+}
+
+.full_container > .right .login_signup_form .input-label {
+    margin-bottom: 60px;
+}
+.full_container > .right #form_register .input-label {
+    margin-bottom: 50px;
+}
+
+.full_container > .right .login_signup_form .form-sublink {
+    margin-top: -40px;
+}
+.full_container > .right #form_register .form-sublink {
+    margin-top: -30px;
+}
+
+
+
+.dash_container {
+    background: #2666c8;
+    width: 100%;
+    display: block;
+    min-height: 100vh;
+}
+
+.dash_topline {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.dash_topline h3 {
+    font-size: 20px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 300;
+    margin: 0;
+
+}
+.dash_topline .ico {
+    font-size: 100px;
+    margin: 10px;
+    margin-top: 20px;
+}
+.dash_topline .little-sub {
+    display: inline-block;
+    font-size: 12px;
+    margin-top: 7px;
+    text-align: center;
+    color: #fff;
+    font-family: Roboto, sans-serif;
+    text-decoration: none;
+}
+.dash_inner {
+    margin: auto;
+    width: 95%;
+    max-width: 1100px;
+    background: #fff;
+    color: #333;
+    border-radius: 10px;
+    min-height: 200px;
+    box-shadow: 1px 1px 2px 0px rgba(53, 53, 53, 0.6);
+    padding: 30px 35px;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+}
+.dash_inner_header {
+    margin-bottom: 40px;
+}
+.dash_inner_header h4 {
+    margin: 0;
+    font-size: 27px;
+    line-height: 42px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.dash_inner .info-line {
+
+}
+.dash-inner-form .form-submit-btn {
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+    max-width: 200px;
+}
+
+.dash_inner pre {
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+
+.info_box {
+    display: inline-block;
+    margin: 10px;
+    background: #d94452;
+    width: 280px;
+    height: auto;
+    padding: 30px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.info_box.c2 {
+    background: #8ac054;
+}
+.info_box.c3 {
+    background: #967ada;
+}
+
+.info_box > span {
+    margin-top: 14px;
+    font-size: 40px;
+    display: block;
+}
+
+.tac {
+    text-align: center;
+}

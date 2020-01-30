@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Website | Picolo</title>
+    <link rel="stylesheet" href="/assets/style.css">
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dash_container">
+        <div class="dash_topline">
+            <i class="material-icons ico">account_circle</i>
+            <h3>Hello, <b>{{user_name}}</b>!</h3>
+            <a href="/logout" class="little-sub">Sign out?</a>
+        </div>
+        <div class="dash_inner">
+            <div class="dash_inner_header">
+                <a href="/dashboard" class="btn btn-ico btn-ico-only left">
+                    <i class="material-icons">chevron_left</i>
+                </a>
+                <h4>{{s_title}}</h4>
+            </div>
+
+
+            <!-- <p class="nothingness-paragraph">You don't have any website yet... Add one using the button up there...</p> -->
+            <p class="info-line">Here you can configure the settings for your new website.</p>
+            <br>
+            <form action="#" class="general-form on-white dash-inner-form" id="add_update_website">
+                <input type="hidden" name="id" value="{{id}}">
+                <div class="row">
+                    <div class="col">
+                        <label class="input-label">
+                            <b>Website name:</b>
+                            <input type="text" name="name" placeholder="artur99.net" required>
+                        </label>
+                        <label class="input-label">
+                            <b>Image Patterns:</b>
+                            <textarea name="patterns" rows="5" placeholder="*.artur99.net/assets/images/*\nartur99.net/img/*.jpg" required></textarea>
+                        </label>
+                        <div class="input-select-group">
+                            <label class="input-label">
+                                <b>Configure compression type:</b>
+                            </label>
+                            <label>
+                                <input type="radio" name="config_pixel_compression_type" value="lossy" checked> Lossy compression
+                                <p class="subinfo">Check if you want your images to be converted lossy. (highly recommended if WebP is on)</p>
+                            </label>
+                            <label>
+                                <input type="radio" name="config_pixel_compression_type" value="lossless"> Lossless compression
+                                <p class="subinfo">Check if you want your images to be converted lossless.</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-select-group">
+                            <label class="input-label">
+                                <b>Configure the service for this website:</b>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="config_webp_compression" checked> WebP Compression
+                                <p class="subinfo">Check if you want your images to be converted and served as webp files.</p>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="config_gzip_compression" checked> GZip Compression
+                                <p class="subinfo">Check if you want the request response to be GZip compressed (this will be replaced by Bortli if HTTPS is requested).</p>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="config_cachecontrol" checked> CacheControl Enabled
+                                <p class="subinfo">Check if you want the response to be entitled by a Cache-Control header (will forcefully tell the browser to cache the image result). If disabled, the original headee will be preserved.</p>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="config_localcache" checked> Local Cache
+                                <p class="subinfo">Check if you want our server to cache the generated image file and not reprocess it on a new request.</p>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="config_pixel_compression" checked> Pixel compression (Lossy/Lossess)
+                                <p class="subinfo">Check if you want the image to have a pixel-wise compression (lossy or lossless).</p>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="config_resize" checked> Screen resize
+                                <p class="subinfo">Check if you want the image to be automatically resized (without altering the ratio) based on the client's screen size.</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <label class="input-label form-submit-btn">
+                    <input type="submit" value="{{b_btn}}">
+                </label>
+
+            </form>
+
+        </div>
+    </div>
+
+
+    <script src="/assets/main.js" charset="utf-8"></script>
+</body>
+</html>

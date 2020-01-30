@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard | Picolo</title>
+    <link rel="stylesheet" href="/assets/style.css">
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dash_container">
+        <div class="dash_topline">
+            <i class="material-icons ico">account_circle</i>
+            <h3>Hello, <b>{{user_name}}</b>!</h3>
+            <a href="/logout" class="little-sub">Sign out?</a>
+        </div>
+        <div class="dash_inner">
+            <div class="dash_inner_header">
+                <a href="/dashboard/add" class="btn btn-ico right">
+                    Add website
+                    <i class="material-icons">add_circle</i>
+                </a>
+                <h4>Your websites</h4>
+            </div>
+
+            <div id="load_with_websites">
+                <p class="nothingness-paragraph" style="display: none">You don't have any website yet... Add one using the button up there...</p>
+
+                <p class="info-line">Here you have a list of your active websites:</p>
+                <table class="beautiful-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 70px;">#</th>
+                            <th>Website</th>
+                            <th style="width: 67%;">ApiKey</th>
+                            <th style="width: 240px;">Act</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>3129</td>
+                            <td>artur99.net</td>
+                            <td>1N872Njwq92Kmjq127Eh9Ye61N872Njwq92Kmjq127Eh9Ye6</td>
+                            <td>
+                                <a href="/dasboard/view?id=3129" title="View" class="a-btn">
+                                    <i class="material-icons">list_alt</i>
+                                </a>
+                                <a href="/dasboard/edit?id=3129" title="Settings" class="a-btn">
+                                    <i class="material-icons">edit</i>
+                                </a>
+                                <a href="#" title="Settings" class="a-btn delete-website" data-id="3">
+                                    <i class="material-icons">delete</i>
+                                </a>
+                                <a href="/dasboard/code?id=3129" title="Code" class="a-btn">
+                                    <i class="material-icons">code</i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="/assets/main.js" charset="utf-8"></script>
+</body>
+</html>
